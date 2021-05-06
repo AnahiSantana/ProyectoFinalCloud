@@ -14,3 +14,4 @@ app.use(express.static(path.join(__dirname, 'dist', 'frontend-project')))
 app.get('*', (req, res)=>{
     res.sendFile(path.join(__dirname, 'dist', 'frontend-project', 'index.html'));
 })
+

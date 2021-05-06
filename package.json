@@ -1,17 +1,20 @@
 {
   "name": "frontend-project",
   "version": "0.0.0",
+  "main": "server.js",
   "scripts": {
     "ng": "ng",
-    "start": "ng build && node server.js",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --prod"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~11.2.12",
+    "@angular/cli": "~11.2.11",
     "@angular/common": "~11.2.12",
     "@angular/compiler": "~11.2.12",
     "@angular/core": "~11.2.12",
@@ -20,6 +23,8 @@
     "@angular/platform-browser-dynamic": "~11.2.12",
     "@angular/router": "~11.2.12",
     "bootstrap": "^4.6.0",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
     "rxjs": "~6.6.0",
     "startbootstrap-shop-item": "^4.3.0",
     "tslib": "^2.0.0",
