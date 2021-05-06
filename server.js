@@ -8,9 +8,9 @@ app.listen(port, ()=>{
     console.log('App is running on port ' + port);
 })
 
-app.use(express.static(path.join(__dirname, 'dist', 'frontend-proyect')))
+app.use(express.static(path.join(__dirname, 'dist', 'frontend-project')))
 
 
 app.get('*', (req, res)=>{
-    res.sendFile(path.join(__dirname, 'dist', 'frontend-proyect', 'index.html'));
+    res.sendFile(path.join(__dirname, 'dist', 'frontend-project', 'index.html'));
 })
