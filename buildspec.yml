@@ -6,12 +6,16 @@ phases:
             nodejs: 14 
         commands: 
             - echo "installing something" 
+            - echo Installing source NPM dependencies...
+            - npm install
+            - npm install -g @angular/cli
     pre_build:
         commands: 
             - echo "we are in the pre build phase" 
     build:
         commands: 
-            - echo "we are in the build block" 
+            - echo "we are in the build block"
+            - ng build --prod 
             - echo "we will run some tests" 
             - grep -Fq "<app-root></app-root>" index.html
     post_build:
