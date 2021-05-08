@@ -1,24 +1,20 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-3">
-            <h1 class="my-4">Mystery Box</h1>
+            <h1 class="my-4">Elige un tamaño:</h1>
             <div class="list-group">
-                <a class="list-group-item" [routerLink]="['/home']">Caja grande</a>
-                <a class="list-group-item" [routerLink]="['/home']">Caja mediana</a>
-                <a class="list-group-item" [routerLink]="['/home']">Caja pequeña</a>
+                <a class="list-group-item active" [routerLink]="['/home']" (click) = "showCajaGrande()">Caja grande</a>
+                <a class="list-group-item" [routerLink]="['/home']" (click) = "showCajaMediana()">Caja mediana</a>
+                <a class="list-group-item" [routerLink]="['/home']" (click) = "showCajaPeque()">Caja pequeña</a>
             </div>
         </div>
         <div class="col-lg-9">
             <div class="card mt-4">
                 <img class="card-img-top img-fluid" src="https://via.placeholder.com/900x400" alt="..." />
                 <div class="card-body">
-                    <h3 class="card-title">Product Name</h3>
-                    <h4>$24.99</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta
-                        fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi
-                        pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
-                    <span class="text-warning">★ ★ ★ ★ ☆</span>
-                    4.0 stars
+                    <h3 class="card-title">{{nombreProducto}}</h3>
+                    <h4>{{precio}}</h4>
+                    <p class="card-text">{{descripcion}}</p>
                 </div>
             </div>
             <div class="card card-outline-secondary my-4">
@@ -29,7 +25,7 @@
                 </div>
             </div>
             <div class="card card-outline-secondary my-4">
-                <div class="card-header">Product Reviews</div>
+                <div class="card-header">Reviews</div>
                 <div class="card-body">
                     <p>Buenísimo</p>
                     <small class="text-muted">Posted by Anahí on 3/1/21</small>
