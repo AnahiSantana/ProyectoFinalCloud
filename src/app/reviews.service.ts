@@ -11,7 +11,7 @@ export class ReviewsService {
   postReview(data: any) {
     const url = "https://y969wcvj3c.execute-api.us-east-1.amazonaws.com/dev/reviews";
 
-    return this.httpClient.post(url, data);
+    return this.httpClient.post(url, data, { reportProgress: true, observe: 'events' });
   }
 
   getReview() {
