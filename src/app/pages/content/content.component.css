@@ -4375,6 +4375,15 @@ input[type=button].btn-block {
   border-top: 0;
 }
 
+#scrollable {
+  flex: 1 1 auto;
+  max-height: 400px;
+}
+
+.reviewInputAndButton{
+  width: 100%;
+}
+
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
@@ -4563,6 +4572,7 @@ div.scroll {
   border-radius: 0;
   margin-bottom: -1px;
 }
+
 
 .breadcrumb {
   display: flex;

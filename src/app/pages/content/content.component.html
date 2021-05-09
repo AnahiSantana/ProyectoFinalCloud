@@ -3,9 +3,9 @@
         <div class="col-lg-3">
             <h1 class="my-4">Elige un tamaño:</h1>
             <div class="list-group">
-                <a class="list-group-item active" [routerLink]="['/home']" (click) = "showCajaGrande()">Caja grande</a>
-                <a class="list-group-item" [routerLink]="['/home']" (click) = "showCajaMediana()">Caja mediana</a>
-                <a class="list-group-item" [routerLink]="['/home']" (click) = "showCajaPeque()">Caja pequeña</a>
+                <a class="list-group-item active" [routerLink]="['/home']" (click)="showCajaGrande()">Caja grande</a>
+                <a class="list-group-item" [routerLink]="['/home']" (click)="showCajaMediana()">Caja mediana</a>
+                <a class="list-group-item" [routerLink]="['/home']" (click)="showCajaPeque()">Caja pequeña</a>
             </div>
         </div>
         <div class="col-lg-9">
@@ -24,9 +24,9 @@
                     <a class="btn btn-success" href="#!">Comprar ahora</a>
                 </div>
             </div>
-            <div class="card card-outline-secondary my-4">
+            <div id="scrollable" class="card card-outline-secondary my-4">
                 <div class="card-header">Reviews</div>
-                <div class="card-body">
+                <div class="card-body" style="overflow: scroll;">
                     <p>Buenísimo</p>
                     <small class="text-muted">Posted by Anahí on 3/1/21</small>
                     <hr />
@@ -39,6 +39,19 @@
                         contento con mi compra, me gustó mucho el resultado,</p>
                     <small class="text-muted">Posted by Alejandro on 3/1/21</small>
                     <hr />
+
+                    <div *ngFor="let review of reviews">
+                        <p>{{review}}</p>
+                        <small class="text-muted">Posted by Alejandro on 3/1/21</small>
+                        <hr />
+                    </div>
+
+                </div>
+                <div class="reviewInputAndButton">
+                    <input #newReview (keyup.enter)="addReview(newReview.value)"
+                        (blur)="addReview(newReview.value); newReview.value='' ">
+                    <button (click)="addReview(newReview.value)">Compartir reseña</button>
+
                 </div>
             </div>
         </div>

@@ -30,4 +30,10 @@ export class ContentComponent implements OnInit {
     this.descripcion = "Esta caja es indicada si tienes ganas de un snack repentino y no sabes que pedir. Es la más pequeña de todas."
   }
 
+  reviews = [];
+  addReview(newReview: string) {
+    if (newReview) {
+      this.reviews.push(newReview);
+    }
+  }
 }
