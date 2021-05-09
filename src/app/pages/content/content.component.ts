@@ -56,9 +56,11 @@ export class ContentComponent implements OnInit {
         "tone": "Sad"
       }
 
-      this.reviewService.postReview(data).subscribe((res: any) => console.log(res));
-      this.getReviews();
-      window.location.reload();
+      this.reviewService.postReview(data).subscribe((res: any) => {
+        console.log(res);
+      });
+
+
     }
   }
 }
