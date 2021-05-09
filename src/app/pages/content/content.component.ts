@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReviewsService } from 'src/app/reviews.service';
 
 @Component({
   selector: 'app-content',
@@ -9,9 +10,13 @@ export class ContentComponent implements OnInit {
   nombreProducto = "Caja grande";
   precio = "$79.99";
   descripcion = "Caja de gran tamaño con muchos artículos dentro de ella. Recomendada si vas a compartir con alguien más.";
-  constructor() { }
+
+  constructor(
+
+  ) { }
 
   ngOnInit(): void {
+
   }
 
   showCajaGrande() {
@@ -33,6 +38,13 @@ export class ContentComponent implements OnInit {
   reviews = [];
   addReview(newReview: string) {
     if (newReview) {
+      let data = {
+        "text": newReview,
+        "user": "Anahí Santana",
+        "tone": "Sad"
+      }
+      //console.log(this.reviewService.postReview(data));
+
       this.reviews.push(newReview);
     }
   }

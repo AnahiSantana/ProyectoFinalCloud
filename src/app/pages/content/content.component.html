@@ -18,10 +18,10 @@
                 </div>
             </div>
             <div class="card card-outline-secondary my-4">
-                <div class="card-header">A que esperas? Compra ahora!</div>
+                <div class="card-header">¿Qué esperas? ¡Compra ahora!</div>
                 <div class="card-body">
 
-                    <a class="btn btn-success" href="#!">Comprar ahora</a>
+                    <a class="btn btn-info" href="#!">Comprar ahora</a>
                 </div>
             </div>
             <div id="scrollable" class="card card-outline-secondary my-4">
@@ -47,10 +47,11 @@
                     </div>
 
                 </div>
-                <div class="reviewInputAndButton">
-                    <input #newReview (keyup.enter)="addReview(newReview.value)"
-                        (blur)="addReview(newReview.value); newReview.value='' ">
-                    <button (click)="addReview(newReview.value)">Compartir reseña</button>
+                <div class="reviewInputAndButton input-group">
+                    <textarea class="form-control" rows="3" #newReview (keyup.enter)="addReview(newReview.value)"
+                        (blur)="addReview(newReview.value); newReview.value='' "></textarea>
+
+                    <button (click)="addReview(newReview.value)" class="btn btn-outline-info">Compartir reseña</button>
 
                 </div>
             </div>
