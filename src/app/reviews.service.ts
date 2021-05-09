@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,11 @@ export class ReviewsService {
     const url = "https://y969wcvj3c.execute-api.us-east-1.amazonaws.com/dev/reviews";
 
     return this.httpClient.post(url, data);
+  }
+
+  getReview() {
+    const url = "https://y969wcvj3c.execute-api.us-east-1.amazonaws.com/dev/reviews";
+    return this.httpClient.get(url);
   }
 
 }

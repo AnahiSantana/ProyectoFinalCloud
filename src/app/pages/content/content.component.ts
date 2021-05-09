@@ -12,7 +12,7 @@ export class ContentComponent implements OnInit {
   descripcion = "Caja de gran tamaño con muchos artículos dentro de ella. Recomendada si vas a compartir con alguien más.";
 
   constructor(
-
+    private reviewService: ReviewsService
   ) { }
 
   ngOnInit(): void {
@@ -43,7 +43,7 @@ export class ContentComponent implements OnInit {
         "user": "Anahí Santana",
         "tone": "Sad"
       }
-      //console.log(this.reviewService.postReview(data));
+      console.log(this.reviewService.postReview(data));
 
       this.reviews.push(newReview);
     }
