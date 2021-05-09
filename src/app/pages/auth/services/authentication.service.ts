@@ -19,4 +19,9 @@ export class AuthenticationService {
     console.log(user);
     return this.http.post(this.authURL + "/users", user); 
   }
+
+  getUserEmailInDynamo(user:any){
+    console.log(user);
+    return this.http.get(this.authURL + "/useremail", user); 
+  }
 }
