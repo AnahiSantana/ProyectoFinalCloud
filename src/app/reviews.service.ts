@@ -16,7 +16,7 @@ export class ReviewsService {
 
   getReview() {
     const url = "https://y969wcvj3c.execute-api.us-east-1.amazonaws.com/dev/reviews";
-    return this.httpClient.get(url);
+    return this.httpClient.get(url, { observe: "body", responseType: "json" });
   }
 
 }

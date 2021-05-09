@@ -43,7 +43,7 @@ export class ContentComponent implements OnInit {
         "user": "Anahí Santana",
         "tone": "Sad"
       }
-      console.log(this.reviewService.postReview(data));
+      console.log(this.reviewService.getReview());
 
       this.reviews.push(newReview);
     }
