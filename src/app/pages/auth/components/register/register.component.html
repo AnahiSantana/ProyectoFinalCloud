@@ -1,30 +1,23 @@
 <div class="row">
     <div class="col-md-6 offset-md-3 mt-4">
         <h3>Registro</h3>
-        <form>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
             <div class="form-group">
                 <label for="registerUsername">Nombre de usuario</label>
-                <input type="text"
-                       class="form-control"
-                       id="registerUsername"
-                       placeholder="Ingrese un nombre">
+                <input type="text" name="username" ngModel required #username="ngModel" class="form-control"
+                    id="registerUsername" placeholder="Ingrese un nombre">
             </div>
             <div class="form-group">
                 <label for="registerEmail">Email</label>
-                <input type="email"
-                       class="form-control"
-                       id="registerEmail"
-                       placeholder="Ingrese un correo">
+                <input type="email" name="email" ngModel required #email="ngModel" class="form-control"
+                    id="registerEmail" placeholder="Ingrese un correo">
             </div>
             <div class="form-group">
                 <label for="registerPassword">Contraseña</label>
-                <input type="password"
-                       class="form-control"
-                       id="registerPassword"
-                       placeholder="Contraseña">
+                <input type="password" name="password" ngModel required #password="ngModel" class="form-control"
+                    id="registerPassword" placeholder="Contraseña">
             </div>
-            <button type="submit"
-                    class="btn btn-primary">Registrar</button>
+            <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Registrar</button>
         </form>
     </div>
-</div> 
+</div>
