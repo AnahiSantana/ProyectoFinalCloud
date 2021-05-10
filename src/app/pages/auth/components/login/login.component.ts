@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   constructor(private authService: AuthenticationService, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
@@ -26,7 +25,6 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/home']);
         localStorage.setItem('username', element['userName']);
       }
-
     }));
 
   }
