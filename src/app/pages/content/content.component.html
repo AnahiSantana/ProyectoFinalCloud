@@ -29,8 +29,8 @@
                 <div class="card-body" style="overflow: scroll;">
 
                     <div *ngFor="let review of reviews">
-                        <p>{{review}}</p>
-                        <small class="text-muted">Posted by Alejandro on 3/1/21</small>
+                        <p>{{review.review}}</p>
+                        <small class="text-muted">Posted by {{review.author}} on {{review.date}}</small>
                         <hr />
                     </div>
 

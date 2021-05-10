@@ -11,7 +11,8 @@ export class ContentComponent implements OnInit {
   precio = "$79.99";
   descripcion = "Caja de gran tamaño con muchos artículos dentro de ella. Recomendada si vas a compartir con alguien más.";
   reviews = [];
-  temp = [];
+  users = [];
+
 
   constructor(
     private reviewService: ReviewsService
@@ -39,10 +40,15 @@ export class ContentComponent implements OnInit {
 
   getReviews() {
     this.reviewService.getReview().subscribe((res: any) => {
+
       res.data["Items"].forEach(element => {
-        this.temp.push(element.text);
+        let item = {
+          "review": element.text,
+          "author": element.author,
+          "date": element.date
+        };
+        this.reviews.push(item);
       });
-      this.reviews = this.temp;
     });
 
   }
@@ -50,6 +56,7 @@ export class ContentComponent implements OnInit {
 
   addReview(newReview: string) {
     if (newReview) {
+
       let data = {
         "text": newReview,
         "user": "Anahí Santana",
