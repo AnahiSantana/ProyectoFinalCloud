@@ -13,7 +13,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~11.2.12",
+    "@angular/animations": "^11.2.13",
     "@angular/cli": "~11.2.11",
     "@angular/common": "^11.2.13",
     "@angular/compiler": "~11.2.12",
@@ -25,6 +25,7 @@
     "@fortawesome/fontawesome-free": "^5.15.3",
     "bootstrap": "^4.6.0",
     "express": "^4.17.1",
+    "ngx-toastr": "^13.2.1",
     "path": "^0.12.7",
     "rxjs": "~6.6.0",
     "startbootstrap-shop-item": "^4.3.0",

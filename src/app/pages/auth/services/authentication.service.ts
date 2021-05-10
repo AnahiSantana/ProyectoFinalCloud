@@ -11,17 +11,12 @@ export class AuthenticationService {
   constructor(private http: HttpClient) {
   }
 
-  showUsers(){
+  getUsers(){
     return this.http.get(this.authURL + "/users", {observe:"body", responseType:"json"});
   }
 
   postUserInDynamo(user:any){
     console.log(user);
     return this.http.post(this.authURL + "/users", user); 
-  }
-
-  getUserEmailInDynamo(user:any){
-    console.log(user);
-    return this.http.get(this.authURL + "/useremail", user); 
   }
 }
