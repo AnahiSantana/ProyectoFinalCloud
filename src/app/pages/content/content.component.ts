@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReviewsService } from 'src/app/reviews.service';
+import { ToneService } from 'src/app/tone.service';
 
 @Component({
   selector: 'app-content',
@@ -15,7 +16,8 @@ export class ContentComponent implements OnInit {
 
 
   constructor(
-    private reviewService: ReviewsService
+    private reviewService: ReviewsService,
+    private toneService: ToneService
   ) { }
 
   ngOnInit(): void {
@@ -57,14 +59,27 @@ export class ContentComponent implements OnInit {
   addReview(newReview: string) {
     if (newReview) {
 
-      let data = {
+
+
+      let datatone = {
         "text": newReview,
-        "user": "Anahí Santana",
-        "tone": "Sad"
       }
 
-      this.reviewService.postReview(data).subscribe((res: any) => {
-        console.log(res);
+      this.toneService.postTone(datatone).subscribe((res: any) => {
+
+        if (res.body) {
+
+          let data = {
+            "text": newReview,
+            "user": "Anahí Santana",
+            "tone": res.body.tones
+          }
+
+          this.reviewService.postReview(data).subscribe();
+
+        }
+
+
       });
 
 
