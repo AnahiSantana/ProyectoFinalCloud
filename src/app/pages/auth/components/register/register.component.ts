@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthenticationService } from '../../services/authentication.service';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +11,7 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private authService: AuthenticationService) { }
+  constructor(private authService: AuthenticationService, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -29,7 +31,12 @@ export class RegisterComponent implements OnInit {
         fechaNacimiento: f.value.birthdate,
         password: f.value.password
       }
-    ).subscribe((data: any) => console.log(data));
+    ).subscribe((data: any) => window.location.reload());
+
+    this.toastr.success("Usuario registrado!", "Exito", { timeOut: 3000 });
+
+    this.router.navigate(['/login']);
+
   }
 
 
