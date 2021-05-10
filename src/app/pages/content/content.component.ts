@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ReviewsService } from 'src/app/reviews.service';
 import { ToneService } from 'src/app/tone.service';
 
@@ -18,7 +19,8 @@ export class ContentComponent implements OnInit {
 
   constructor(
     private reviewService: ReviewsService,
-    private toneService: ToneService
+    private toneService: ToneService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -63,8 +65,6 @@ export class ContentComponent implements OnInit {
   addReview(newReview: string) {
     if (newReview) {
 
-
-
       let datatone = {
         "text": newReview,
       }
@@ -72,21 +72,15 @@ export class ContentComponent implements OnInit {
       this.toneService.postTone(datatone).subscribe((res: any) => {
 
         if (res.body) {
-
+          console.log(localStorage.getItem('username'));
           let data = {
             "text": newReview,
-            "user": "Anahí Santana",
+            "user": localStorage.getItem('username') != null ? localStorage.getItem('username') : "anonymous user",
             "tone": res.body.tones
           }
-
           this.reviewService.postReview(data).subscribe();
-
         }
-
-
       });
-
-
     }
   }
 }
